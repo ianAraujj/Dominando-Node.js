@@ -21,3 +21,14 @@ Temos a rota ('company' e 'users'), o parâmetro da rota ('1', ou seja, esse par
 POST http://api.com/company/1/users
 
 Em uma requisição POST, nós utilizamos o body da requisição para enviar os dados. O body é utilizado apenas em requisições POST e PUT. Temos também o cabeçalho da requisição, aqui podemos definir parâmetros como a linguagem, essa informação pode ser útil já que o front-end pode informar ao back-end a linguagem do cliente
+
+## Iniciando
+1 - Crie e entre na pasta do projeto
+
+2 - yarn init -y
+Cria o arquivo 'package.json', nesse arquivo contém todas as dependências do projeto. 
+
+3 - yarn add express
+Se o projeto for compartilhado por outra pessoa, ela não precisa instalar as dependências novamente. Basta fazer um 'yarn' que todas as dependências do arquivo 'package.json' serão instaladas. As dependências são instaladas dentro da pastas 'node_modules'.
+
+4 - Para executar: node index.js
