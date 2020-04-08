@@ -37,3 +37,12 @@ Se o projeto for compartilhado por outra pessoa, ela não precisa instalar as de
 1 - Instalar essa dependência como DEV, por isso essa flag no final, quer dizer que em Produção essa dependência não existe: yarn add nodemon -D
 
 2 - Agora, execute no terminal: yarn nodemon index.js
+
+## Middleware
+* É um Design Pattern presente no Node.js
+
+* Podemos definir um Middleware global em que todas as requisições devem passar por ele. Um middleware receb os parâmetros (req, res, next)
+
+* Se no middleware global, eu tenho um 'return next();', quer dizer que a requisição foi mandada para o próximo middleware. Pelo que eu entendi, cada rota que nós criamos é um middleware
+
+* O User pode ser usado para fazer verificações nas requisições. É possível criar vário middlewares para fazer as verificações e adicioná-los em nossas rotas.
