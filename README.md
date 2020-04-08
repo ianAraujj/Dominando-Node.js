@@ -32,3 +32,8 @@ Cria o arquivo 'package.json', nesse arquivo contém todas as dependências do p
 Se o projeto for compartilhado por outra pessoa, ela não precisa instalar as dependências novamente. Basta fazer um 'yarn' que todas as dependências do arquivo 'package.json' serão instaladas. As dependências são instaladas dentro da pastas 'node_modules'.
 
 4 - Para executar: node index.js
+
+## Auto Reloading
+1 - Instalar essa dependência como DEV, por isso essa flag no final, quer dizer que em Produção essa dependência não existe: yarn add nodemon -D
+
+2 - Agora, execute no terminal: yarn nodemon index.js
