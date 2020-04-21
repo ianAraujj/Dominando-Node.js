@@ -25,18 +25,20 @@ Em uma requisição POST, nós utilizamos o body da requisição para enviar os 
 ## Iniciando
 1 - Crie e entre na pasta do projeto
 
-2 - yarn init -y
+2 - ```yarn init -y```
 Cria o arquivo 'package.json', nesse arquivo contém todas as dependências do projeto. 
 
-3 - yarn add express
+3 - ```yarn add express```
 Se o projeto for compartilhado por outra pessoa, ela não precisa instalar as dependências novamente. Basta fazer um 'yarn' que todas as dependências do arquivo 'package.json' serão instaladas. As dependências são instaladas dentro da pastas 'node_modules'.
 
 4 - Para executar: node index.js
 
 ## Auto Reloading
-1 - Instalar essa dependência como DEV, por isso essa flag no final, quer dizer que em Produção essa dependência não existe: yarn add nodemon -D
+1 - Instalar essa dependência como DEV, por isso essa flag ```-D``` no final, quer dizer que em Produção essa dependência não existe: yarn add nodemon -D
 
 2 - Agora, execute no terminal: yarn nodemon index.js
+
+3 - No index.js, é necessário lembrar de definir a porta padrão
 
 ## Middleware
 * É um Design Pattern presente no Node.js
