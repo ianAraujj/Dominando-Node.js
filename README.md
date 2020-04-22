@@ -99,3 +99,21 @@ User.findOne({
   }
 })
 ```
+
+* Outra coisa que temos que ter é as ```MIGRAÇÕES```, é necessário para que nossa base de dados fique conscistente. As migrações mantém a base de dados atualizadas entre todos os desenvolvedores do time e também no ambiente de produção. Uma migration já criada e repassada NÃO pode ser editada, ou seja, crie uma nova migration para realizar as alterações que vc precisa.
+
+* É possível desfazer uma migração se errarmos em algo enquanto tivermos desenvolvendo a feature, isso é possível graçar a operação de ROLLBACK ou DOWN como está explícito lá no arquivo migration.
+
+* Será utilizado a arquitetura MVC. O controller na verdade é uma classe que retorna um JSON sendo que um controller não pode chamar outro controller ou ele mesmo. Cada model tem o seu controller.
+
+* Um novo controller pode ter no máximo 5 métodos:
+
+```index()```: listagem
+
+```show()```: exibir um único item
+
+```store()```: cadastrar
+
+```update()```: alterar
+
+```delete()```: deletar
