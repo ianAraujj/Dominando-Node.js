@@ -117,3 +117,6 @@ User.findOne({
 ```update()```: alterar
 
 ```delete()```: deletar
+
+## Padronização do Código
+* ESLint, Prettier & EditorConfig
