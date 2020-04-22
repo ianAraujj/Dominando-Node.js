@@ -48,3 +48,8 @@ Se o projeto for compartilhado por outra pessoa, ela não precisa instalar as de
 * Se no middleware global, eu tenho um 'return next();', quer dizer que a requisição foi mandada para o próximo middleware. Pelo que eu entendi, cada rota que nós criamos é um middleware
 
 * O User pode ser usado para fazer verificações nas requisições. É possível criar vário middlewares para fazer as verificações e adicioná-los em nossas rotas.
+
+## Organização de código
+* O que antes tinha apenas o ```index.js```, agora podemos dividir em ```app.js```, ```server.js```, ```routes.js```. Tudo isso dentro da pasta ```src```.
+
+* O ideal é termos uma class para cada funcionalidade da aplicação
