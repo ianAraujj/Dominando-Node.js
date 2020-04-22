@@ -82,3 +82,20 @@ Se o projeto for compartilhado por outra pessoa, ela não precisa instalar as de
 
 ## Sequelize & MVC:
 * O Sequelize é uma ORM, ou seja, é uma abstração do banco de dados usando a arquitetura MVC. Na arquitetura MVC, para as tabelas users e projects, os models seriam os arquivos ```users.js``` e ```projects.js```. O Sequelize permite que você use JS em vez de SQL.
+
+* Para criar um usuário, seria assim:
+```
+User.create({
+  name: 'Ian Luccas',
+  email: 'ianlucas2503@gmail.com'
+})
+```
+
+* Para buscar UM usuário:
+```
+User.findOne({
+  "where": {
+      name: 'Ian Luccas'
+  }
+})
+```
