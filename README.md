@@ -53,3 +53,27 @@ Se o projeto for compartilhado por outra pessoa, ela não precisa instalar as de
 * O que antes tinha apenas o ```index.js```, agora podemos dividir em ```app.js```, ```server.js```, ```routes.js```. Tudo isso dentro da pasta ```src```.
 
 * O ideal é termos uma class para cada funcionalidade da aplicação
+
+## Repositórios
+* Desafio 1: https://github.com/ianAraujj/Conceitos_de_NodeJS
+
+## Nodemon & Sucrase
+* O Sucrase permite que agt possa usar 'imports' nos módulos da aplicação e 'export default'. Instalação do sucrase ```yarn add sucrase -D```.
+
+* Lembrando que o Nodemon é usado por causa do auto-reloading, para usá-lo junto com o Sucrase precisamos configurar nosso package.json. A ideia é que ele execute Nodemon, mas antes executar o Sucrase para que os 'imports' sejam bem interpretados. Vamos configurar um "scripts" dentro do package.json: 
+
+```
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+```
+
+* Depois criar um novo arquivo chamado ```nodemon.json```, aqui o sucrase é executado. 
+
+```
+{
+  "execMap": {
+    "js": "node -r sucrase/register"
+  }
+}
+```
