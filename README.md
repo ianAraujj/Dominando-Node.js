@@ -77,3 +77,5 @@ Se o projeto for compartilhado por outra pessoa, ela não precisa instalar as de
   }
 }
 ```
+
+* Para executar: yarn dev
