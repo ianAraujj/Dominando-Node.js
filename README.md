@@ -120,3 +120,30 @@ User.findOne({
 
 ## Padronização do Código
 * ESLint, Prettier & EditorConfig
+
+## Configuração do Sequelize
+* Estrutura de Pastas:
+```
+├───app
+│   ├───controllers
+│   └───models
+├───config
+|----------database.js
+└───database
+    └───migrations
+```
+
+* Ìnstalar o ```yarn add sequelize``` e também ```yarn add sequelize-cli -D```. O CLI vai facilitar na criação de migrations e outros comandos no terminal. 
+
+* Criar um arquivo no diretório principal: ```.sequelizerc``` e mudá-lo para a linguagem de JS. Esse arquivo vai ser responsável por exportar todos os arquivos de configuração que criamos acima.
+
+```
+const {resolve} = require('path');
+
+module.exports = {
+  config: resolve(__dirname, 'src', 'config', 'database.js'),
+  'models-path': resolve(__dirname, 'src', 'app', 'models'),
+  'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
+  'seeders-path': resolve(__dirname, 'src', 'database', 'seeds')
+}
+```
