@@ -147,3 +147,84 @@ module.exports = {
   'seeders-path': resolve(__dirname, 'src', 'database', 'seeds')
 }
 ```
+
+* No arquivo ```database.js```, temos:
+
+```
+module.exports = {
+  dialect: 'postgres',
+  host: 'localhost',
+  username: 'postgre',
+  password: 'postgre',
+  database: 'postgres',
+  define: {
+    timestamps: true,
+    underscored: true,
+    underscoredAll: true
+  }
+}
+```
+
+Sendo o 'timestamps' responsável por criar em cada registro uma informação para a data da adição e a data da última modificação. O 'underscored' é usado para definir o nome das tabelas e colunas, seguindo o padrão: 'data_de_nascimento', com caixa baixa e usando underline.
+
+## Criando as migrations
+Podemos usar o cli do sequelize em que instalamos pra nos ajudar a criar nossas migrations.
+
+* Criando uma migration: yarn sequelize migration:create --name=create-users
+
+* Adicionando a migration: yarn sequelize db:migrate
+
+* Removendo uma migration: yarn sequelize db:migrate:undo
+
+## Criando as colunas:
+
+```
+'use strict';
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable('users',
+      {
+        id: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          autoIncrement: true,
+          primaryKey: true
+        },
+        name: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        email: {
+          type: Sequelize.STRING,
+          allowNull: false,
+          unique: true
+        },
+        password_hash: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        provider:{
+          type: Sequelize.BOOLEAN,
+          allowNull: false,
+          defaultValue: false
+        },
+        created_at:{
+          type: Sequelize.DATE,
+          allowNull: false
+        },
+        update_at:{
+          type: Sequelize.DATE,
+          allowNull: false
+        }
+      }
+    );
+  },
+
+  down: (queryInterface) => {
+    return queryInterface.dropTable('users');
+
+  }
+};
+
+```
