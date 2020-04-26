@@ -176,8 +176,6 @@ Podemos usar o cli do sequelize em que instalamos pra nos ajudar a criar nossas 
 
 * Removendo uma migration: yarn sequelize db:migrate:undo
 
-## Criando as colunas:
-
 ```
 'use strict';
 
@@ -228,3 +226,7 @@ module.exports = {
 };
 
 ```
+
+* Depois disso, crie o Model User. Vale lembrar que ainda não temos uma conexão com o BD. Para criar o Model User, temos que receber por parâmetro um 'sequelize', ou seja, uma conexão. Essa conexão será criada em ```index.js``` dentro da pasta migrations. Depois disso, esse arquivo com as conexões precisa ser chamado em algum lugar, isso acontece no arquivo ```app.js```
+
+* Para usar os Models nas rotas é o seguinte: vc importa o Model e depois vc define a função da rota como assíncrona (async), com isso é possível usar o 'await'. 
