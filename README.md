@@ -175,6 +175,8 @@ Podemos usar o cli do sequelize em que instalamos pra nos ajudar a criar nossas 
 
 * Removendo uma migration: yarn sequelize db:migrate:undo
 
+* Removendo todas as migrations: yarn sequelize db:migrate:undo:all
+
 ```
 'use strict';
 
