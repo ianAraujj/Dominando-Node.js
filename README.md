@@ -164,8 +164,7 @@ module.exports = {
   }
 }
 ```
-
-Sendo o 'timestamps' responsável por criar em cada registro uma informação para a data da adição e a data da última modificação. O 'underscored' é usado para definir o nome das tabelas e colunas, seguindo o padrão: 'data_de_nascimento', com caixa baixa e usando underline.
+No caso do 'postgres', nós temos que instalar a depedência ``` yarn add pg pg-hstore```. Sendo o 'timestamps' responsável por criar em cada registro uma informação para a data da adição e a data da última modificação. O 'underscored' é usado para definir o nome das tabelas e colunas, seguindo o padrão: 'data_de_nascimento', com caixa baixa e usando underline.
 
 ## Criando as migrations
 Podemos usar o cli do sequelize em que instalamos pra nos ajudar a criar nossas migrations.
