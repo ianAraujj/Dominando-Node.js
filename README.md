@@ -231,3 +231,47 @@ module.exports = {
 * Depois disso, crie o Model User. Vale lembrar que ainda não temos uma conexão com o BD. Para criar o Model User, temos que receber por parâmetro um 'sequelize', ou seja, uma conexão. Essa conexão será criada em ```index.js``` dentro da pasta migrations. Depois disso, esse arquivo com as conexões precisa ser chamado em algum lugar, isso acontece no arquivo ```app.js```
 
 * Para usar os Models nas rotas é o seguinte: vc importa o Model e depois vc define a função da rota como assíncrona (async), com isso é possível usar o 'await'. 
+
+## Feature
+* Para uma funcionalidade (Cadastro de Usuário, por ex) podemos criar um controller para administrá-la.
+
+```
+import User from '../models/User';
+
+class UserController {
+  async store(req, res){
+    const email_exist = await User.findOne({where:{ email: req.body.email}});
+
+    if(email_exist){
+      return res.status(400).json({
+        ERROR: "e-mail already exists"
+      });
+    }
+
+    const {id, name, email, provider} = await User.create(req.body);
+
+    return res.json({
+      id: id,
+      name: name,
+      email: email,
+      provider: provider
+    });
+  }
+}
+
+export default new UserController();
+```
+
+* Após isso, é só chamr o controller nas rotas:
+
+```
+import Router from 'express';
+import UserController from './app/controllers/UserController';
+
+const routes = new Router();
+
+
+routes.post('/users', UserController.store);
+
+export default routes;
+```
